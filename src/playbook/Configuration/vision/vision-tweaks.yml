@@ -1,0 +1,15 @@
+---
+title: VIsion OS Tweaks
+description: Runs the VIsion optimizer scripts after the AtlasOS base configuration.
+privilege: TrustedInstaller
+actions:
+  - !writeStatus: { status: "Applying VIsion OS tweaks" }
+
+  - !powerShell:
+    command: '& ".\VIsionTweaks\Apply-VIsionTweaks.ps1"'
+    exeDir: true
+    wait: true
+    runas: trustedInstaller
+    timeout: 1800
+    weight: 8
+    handleExitCodes: { "!0": halt }
