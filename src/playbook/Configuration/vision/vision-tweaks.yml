@@ -10,6 +10,6 @@ actions:
     exeDir: true
     wait: true
     runas: trustedInstaller
-    timeout: 1800
+    timeout: 1800000
     weight: 8
     handleExitCodes: { "!0": halt }
